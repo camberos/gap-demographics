@@ -21,6 +21,8 @@ import { AppPeople } from './app.people';
 import { AppChartPopulation } from "./app.chart-population";
 import { AppChartMedianAge } from "./app.chart-median-age";
 
+import { AppFooter } from "./app.footer";
+
 import { AppData  }            from './app.data';
 import { DemographicsService } from './app.service-http';
 
@@ -39,6 +41,7 @@ import { DemographicsService } from './app.service-http';
     AppChartPopulation,
     AppChartMedianAge,
     AppData,
+    AppFooter,
     MaterializeDirective
   ],
   providers: [
