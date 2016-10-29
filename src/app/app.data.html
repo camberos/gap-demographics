@@ -1,0 +1,50 @@
+	  <span *ngIf="loading">
+	  	<div class="page-loader-container">
+	    	<div class="dizzy-gillespie"></div>
+	  	</div>
+	  </span>
+	    <table *ngFor="let demographic of demographics" class="highlight">
+	      <thead>
+	        <tr>
+	            <th data-field="Title">{{demographic.title}}</th>
+	            <th data-field="Location">Location</th>
+	            <th data-field="Percentage">%</th>
+	            <th data-field="comparison_label">{{demographic.comparison_label}}</th>
+	            <th data-field="Percentage">%</th>
+	            <th data-field="country_label">{{demographic.country_label}}</th>
+	            <th data-field="Percentage">%</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	          <tr>
+	              <td>{{demographic.labels.b1}}</td>
+	              <td>{{demographic.data.b1}}</td>
+	              <td>{{ demographic.data.b1*100/(demographic.data.b1+demographic.data.b2) | number : '1.2-2' }}</td>
+	              <td>{{demographic.comparison_data.b1}}</td>
+	              <td>{{ demographic.comparison_data.b1*100/(demographic.comparison_data.b1+demographic.comparison_data.b2) | number : '1.2-2' }}</td>
+	              <td>{{demographic.country_data.b1}}</td>
+	              <td>{{ demographic.country_data.b1*100/(demographic.country_data.b1+demographic.country_data.b2) | number : '1.2-2' }}</td>
+	          </tr>
+	          <tr>
+	              <td>{{demographic.labels.b2}}</td>
+	              <td>{{demographic.data.b2}}</td>
+	              <td>{{ demographic.data.b2*100/(demographic.data.b1+demographic.data.b2) | number : '1.2-2' }}</td>
+	              <td>{{demographic.comparison_data.b2}}</td>
+	              <td>{{ demographic.comparison_data.b2*100/(demographic.comparison_data.b1+demographic.comparison_data.b2) | number : '1.2-2' }}</td>
+	              <td>{{demographic.country_data.b2}}</td>
+	              <td>{{ demographic.country_data.b2*100/(demographic.country_data.b1+demographic.country_data.b2) | number : '1.2-2' }}</td>
+	          </tr>
+	          <tr>
+	            <td>Total:</td>
+	            <td>{{demographic.data.b1+demographic.data.b2}}</td>
+	            <td></td>
+	            <td>{{demographic.comparison_data.b1+demographic.comparison_data.b2}}</td>
+	            <td></td>
+	            <td>{{demographic.country_data.b1+demographic.country_data.b2}}</td>
+	            <td></td>
+	          </tr>
+	      </tbody>
+	    </table>
+
+
+
