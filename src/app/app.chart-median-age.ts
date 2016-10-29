@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'chart-population',
+    selector: 'chart-media-age',
     template: `
-        <div id="chart-population-container" width='100%'><chart [options]="options"></chart></div>
+        <div id="chart-media-age-container" width='100%'><chart [options]="options"></chart></div>
     `
 })
-export class AppChartPopulation {
+export class AppChartMedianAge {
     constructor() {
       this.options = {
-      colors: ['#dfac34', '#e54d42', '#3a113b', '#64b6c4'],
+      colors: ['#64b6c4'],
 
       credits: {
             enabled: false
@@ -17,7 +17,7 @@ export class AppChartPopulation {
 
       chart: {
           type: 'pie',
-          renderTo: 'chart-population-container',
+          renderTo: 'chart-media-age-container',
           options3d: {
               enabled: true,
               alpha: 45
@@ -27,7 +27,7 @@ export class AppChartPopulation {
           text: ''
       },
       subtitle: {
-          text: '24,851',
+          text: '34 Years',
           style: {
             fontSize: '20px',
             fontWeight: '900'
@@ -41,10 +41,9 @@ export class AppChartPopulation {
       },
       series: [{
           size: '70%',
-          name: 'Population',
+          name: 'Median age',
           data: [
-              ['Males', 12612],
-              ['Females', 13658]
+              ['Median age', 34]
           ]
       }]       
 

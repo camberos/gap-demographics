@@ -14,6 +14,7 @@ import { AppReportDetails } from './app.report-details';
 import { AppLocationSnapshot } from './app.location-snapshot';
 import { AppPeople } from './app.people';
 import { AppChartPopulation } from "./app.chart-population";
+import { AppChartMedianAge } from "./app.chart-median-age";
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { AppChartPopulation } from "./app.chart-population";
     AppLocationSnapshot,
     AppPeople,
     AppChartPopulation,
+    AppChartMedianAge,
     MaterializeDirective
   ],
   bootstrap: [ AppComponent ]
