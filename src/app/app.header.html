@@ -1,17 +1,68 @@
-<!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">Pdf</a></li>
-  <li><a href="#!">CSV</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">Print</a></li>
-</ul>
-<nav>
-  <div class="nav-wrapper">
-    <a href="#!" class="brand-logo">Logo</a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="sass.html">Languages</a></li>
-      <!-- Dropdown Trigger -->
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Export<i class="material-icons right">arrow_drop_down</i></a></li>
-    </ul>
+<nav class="top-nav blue-grey lighten-5">
+  <div class="container">
+    <div class="nav-wrapper"><a class="flow-text page-title grey-text">Logo Section</a></div>
   </div>
 </nav>
+<!--   <nav class="grey darken-1">
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" materialize="sideNav" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+    </div>
+    </div>
+  </nav> -->
+
+
+<ul id="dropdown1" class="black-text dropdown-content">
+  <li><a class="black-text" href="#!">PDF</a></li>
+  <li><a class="black-text" href="#!">CSV</a></li>
+  <li class="divider"></li>
+  <li><a class="black-text" href="#!">Print</a></li>
+</ul>
+
+<nav class="white">
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo black-text">Demographics Report</a>
+      <a href="#" materialize="sideNav" data-activates="mobile-demo" class="black-text button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a materialize="leanModal" [materializeParams]="[{dismissible: true}]" class="black-text modal-trigger" href="#modal1">Languages</a></li>
+        <li><a class="black-text dropdown-button" href="#!" data-activates="dropdown1">Export<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div id="modal1" class="modal bottom-sheet">
+  <div class="modal-content">
+    <h4>Select language</h4>
+  </div>
+  <div class="modal-footer">
+      <ul class="collection with-header">
+        <li class="collection-item">English</li>
+        <li class="collection-item">Indonesian</li>
+        <li class="collection-item">Spanish</li>
+        <li class="collection-item">Italian</li>
+      </ul>
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
+</div>

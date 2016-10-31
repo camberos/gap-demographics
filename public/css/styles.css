@@ -1,7 +1,25 @@
-body {
-    background-color:#e0e0e0;
+
+nav.top-nav {
+    height: 180px;
+    box-shadow: none;
+}
+nav.top-nav a.page-title {
+    line-height: 180px;
+    font-size: 48px;
 }
 
+.weight-200 {
+    font-weight: 200;
+}
+.weight-300 {
+    font-weight: 300;
+}
+.weight-400 {
+    font-weight: 400;
+}
+.weight-500 {
+    font-weight: 500;
+}
 
 /* Custom Loader for gapmaps*/
 
