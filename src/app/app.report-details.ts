@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Locale, LocaleService, LocalizationService } from 'angular2localization';
 
 @Component({
   selector: 'app-report-details',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
  	styleUrls: ['app.report-details.css']
 
 })
-export class AppReportDetails {
+export class AppReportDetails extends Locale {
+	constructor(public locale: LocaleService, public localization: LocalizationService) {
+        super(locale, localization);
+    }
 }
