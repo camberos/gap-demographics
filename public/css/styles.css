@@ -34,7 +34,9 @@ nav.top-nav a.page-title {
     position: relative;
     top: 50%}
 
-
+.material-icons {
+    color: #757575;
+}
 
 
 @-webkit-keyframes loader {

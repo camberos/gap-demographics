@@ -3,30 +3,6 @@
     <div class="nav-wrapper"><a class="flow-text page-title grey-text">Logo Section</a></div>
   </div>
 </nav>
-<!--   <nav class="grey darken-1">
-  <div class="container">
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <a href="#" materialize="sideNav" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-    </div>
-    </div>
-  </nav> -->
-<!-- 
-        <h3>{{ 'CHANGE_COUNTRY' | translate:lang }}</h3> -->
-
-
 
 <nav class="white">
   <div class="container">
@@ -34,37 +10,30 @@
       <a href="#!" class="brand-logo black-text">{{ 'TITLE' | translate:lang }}</a>
       <a href="#" materialize="sideNav" data-activates="mobile-demo" class="black-text button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a materialize="leanModal" [materializeParams]="[{dismissible: true}]" class="black-text modal-trigger" href="#modal1">{{ 'LANGUAGES' | translate:lang }}</a></li>
-         <li><a materialize="leanModal" [materializeParams]="[{dismissible: true}]" class="black-text modal-trigger" href="#modal2"><i class="material-icons">more_vert</i></a></li>
+        <li><a materialize="leanModal" [materializeParams]="[{dismissible: true}]" class="modal-trigger" href="#modal1"><i class="material-icons">language</i></a></li>
+         <li><a materialize="leanModal" [materializeParams]="[{dismissible: true}]" class="modal-trigger" href="#modal2"><i class="material-icons">more_vert</i></a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a materialize="leanModal" [materializeParams]="[{dismissible: true}]" class="black-text modal-trigger" href="#modal1">{{ 'LANGUAGES' | translate:lang }}</a></li>
-
+        <li><a materialize="leanModal" [materializeParams]="[{dismissible: true}]" class="modal-trigger" href="#modal1">{{ 'LANGUAGES' | translate:lang }}</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- <ul id="dropdown1" class="black-text dropdown-content">
-  <li><a class="black-text" href="#!">PDF</a></li>
-  <li><a class="black-text" href="#!">CSV</a></li>
-  <li class="divider"></li>
-  <li><a class="black-text" href="#!">{{ 'PRINT' | translate:lang }}</a></li>
-</ul> -->
+
 
 <div id="modal2" class="modal bottom-sheet">
   <div class="modal-content">
     <h4>{{ 'SETTINGS' | translate:lang }}</h4>
-  </div>
-  <div class="modal-footer">
-    <div class="collection">
-      <a class="collection-item modal-close">Change Logo</a>
-      <a class="collection-item modal-close">Export to PDF</a>
-      <a class="collection-item modal-close">Export to CSV</a>
-      <a class="collection-item modal-close">{{ 'PRINT' | translate:lang }}</a>
-
-    </div>
-    <a href="#!" class="modal-action modal-close waves-effect btn-flat">{{ 'CLOSE' | translate:lang }}</a>
+    
+      <div class="collection">
+        <a class="collection-item avatar modal-close black-text"><i class="small material-icons circle">image</i>Change Logo</a>
+        <a class="collection-item avatar modal-close black-text"><i class="small material-icons circle">picture_as_pdf</i>Export to PDF</a>
+        <a class="collection-item avatar modal-close black-text">Export to CSV</a>
+        <a class="collection-item avatar modal-close black-text"><i class="Small material-icons circle">print</i> {{ 'PRINT' | translate:lang }}</a>
+      </div>
+      <a href="#!" class="modal-action modal-close waves-effect btn-flat">{{ 'CLOSE' | translate:lang }}</a>
+   
   </div>
 </div>
 
@@ -75,10 +44,10 @@
   </div>
   <div class="modal-footer">
       <div class="collection">
-         <a (click)="selectLocale('en', 'AU', 'AUD');" class="collection-item modal-close">English</a>
-         <a (click)="selectLocale('id', 'ID', 'IDR');" class="collection-item modal-close">Indonesia</a>
-         <a (click)="selectLocale('es', 'ES', 'EUR');;" class="collection-item modal-close">Espanol</a>
-         <a (click)="selectLocale('it', 'IT', 'EUR');" class="collection-item modal-close">Italiano</a>
+         <a (click)="selectLocale('en', 'AU', 'AUD');" class="collection-item modal-close black-text">English</a>
+         <a (click)="selectLocale('id', 'ID', 'IDR');" class="collection-item modal-close black-text">Bahasa Indonesia</a>
+         <a (click)="selectLocale('es', 'ES', 'EUR');;" class="collection-item modal-close black-text">Español</a>
+         <a (click)="selectLocale('it', 'IT', 'EUR');" class="collection-item modal-close black-text">Italiano</a>
       </div>
     <a href="#!" class="modal-action modal-close waves-effect btn-flat">{{ 'CLOSE' | translate:lang }}</a>
   </div>
