@@ -31,17 +31,14 @@ export class AppData implements OnInit {
 
   }
 
-  download(){
-   var csvData = this.ConvertToCSV(this.demographics);
-    var a = document.createElement("a");
+  downloadCsv(){
+     var csvData = this.convertToCSV(this.demographics);
     var blob = new Blob([csvData], { type: 'text/csv' });
     var url= window.URL.createObjectURL(blob);
-    a.href = url;
-    a.download = 'SampleExport.csv';
-    a.click();
+    window.open(url);
   }
   // convert Json to CSV data in Angular2
-  ConvertToCSV(objArray: any) {
+  convertToCSV(objArray: any) {
             var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
             var str = '';
             var row = "";
