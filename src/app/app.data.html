@@ -1,12 +1,123 @@
-  
-  <div class="card-content">
-    <span class="card-title">{{ 'POPULATION' | translate:lang }}</span> 
-	  <span *ngIf="loading">
+
+    <div class="section" *ngFor="let demographicClassifications of demographics.classification_groups">
+    <h5 class="flow-text flex-title weight-500">{{ demographicClassifications.title }}</h5>
+    <div class="divider"></div>
+      <div class="row">
+        <div class="col s12">
+          <div class="card hoverable">
+					  <div class="card-content">
+					    <span class="card-title"></span> 
+
+
+					  <span *ngIf="demographicClassifications.title=='People'">
+						  <span *ngFor="let demographicData of demographics.data">
+						  	<span *ngIf="demographicData.title=='Population'">
+								  <table class="highlight responsive-table">
+								  	<thead >
+							        <tr>
+						            <th data-field="Title">{{demographicData.title}}</th>
+						            <th data-field="Location">Location</th>
+						            <th data-field="Percentage">%</th>
+						            <th data-field="comparison_label">{{demographicData.comparison_label}}</th>
+						            <th data-field="Percentage">%</th>
+						            <th data-field="country_label">{{demographicData.country_label}}</th>
+						            <th data-field="Percentage">%</th>
+							        </tr>
+							      </thead>
+
+						 				<tbody>
+						          <tr>
+						              <td>{{demographicData.labels.b1}}</td>
+						              <td>{{demographicData.data.b1}}</td>
+						              <td>{{ demographicData.data.b1*100/(demographicData.data.b1+demographicData.data.b2) | number : '1.2-2' }}</td>
+						              <td>{{demographicData.comparison_data.b1}}</td>
+						              <td>{{ demographicData.comparison_data.b1*100/(demographicData.comparison_data.b1+demographicData.comparison_data.b2) | number : '1.2-2' }}</td>
+						              <td>{{demographicData.country_data.b1}}</td>
+						              <td>{{ demographicData.country_data.b1*100/(demographicData.country_data.b1+demographicData.country_data.b2) | number : '1.2-2' }}</td>
+						          </tr>
+						          <tr>
+						              <td>{{demographicData.labels.b2}}</td>
+						              <td>{{demographicData.data.b2}}</td>
+						              <td>{{ demographicData.data.b2*100/(demographicData.data.b1+demographicData.data.b2) | number : '1.2-2' }}</td>
+						              <td>{{demographicData.comparison_data.b2}}</td>
+						              <td>{{ demographicData.comparison_data.b2*100/(demographicData.comparison_data.b1+demographicData.comparison_data.b2) | number : '1.2-2' }}</td>
+						              <td>{{demographicData.country_data.b2}}</td>
+						              <td>{{ demographicData.country_data.b2*100/(demographicData.country_data.b1+demographicData.country_data.b2) | number : '1.2-2' }}</td>
+						          </tr>
+						          <tr>
+						            <td>Total:</td>
+						            <td>{{demographicData.data.b1+demographicData.data.b2}}</td>
+						            <td></td>
+						            <td>{{demographicData.comparison_data.b1+demographicData.comparison_data.b2}}</td>
+						            <td></td>
+						            <td>{{demographicData.country_data.b1+demographicData.country_data.b2}}</td>
+						            <td></td>
+						          </tr>
+					      		</tbody>
+								  </table>
+								</span>
+							</span>
+					  </span>
+						
+						</div>
+						<div class="card-action">
+    					<a *ngIf="!loading" (click)="downloadCsv();" materialize="tooltip" class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Download CSV" class="waves-effect btn grey lighten-4"><i class="material-icons">file_download</i></a>
+  					</div>
+          </div>
+        </div>
+      </div>
+    </div>
+		<span *ngIf="loading">
 	  	<div class="page-loader-container">
 	    	<div class="dizzy-gillespie"></div>
 	  	</div>
 	  </span>
-	    <table *ngFor="let demographic of demographics" class="highlight responsive-table">
+
+
+
+<!-- 	 <table *ngFor="let demographic of demographics.data" class="highlight responsive-table">
+	  	 <thead>
+	        <tr>
+	            <th data-field="Title">{{demographic.title}}</th>
+	            <th data-field="Location">Location</th>
+	            <th data-field="Percentage">%</th>
+	            <th data-field="comparison_label">{{demographic.comparison_label}}</th>
+	            <th data-field="Percentage">%</th>
+	            <th data-field="country_label">{{demographic.country_label}}</th>
+	            <th data-field="Percentage">%</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	          <tr>
+	              <td>{{demographic.labels.b1}}</td>
+	              <td>{{demographic.data.b1}}</td>
+	              <td>{{ demographic.data.b1*100/(demographic.data.b1+demographic.data.b2) | number : '1.2-2' }}</td>
+	              <td>{{demographic.comparison_data.b1}}</td>
+	              <td>{{ demographic.comparison_data.b1*100/(demographic.comparison_data.b1+demographic.comparison_data.b2) | number : '1.2-2' }}</td>
+	              <td>{{demographic.country_data.b1}}</td>
+	              <td>{{ demographic.country_data.b1*100/(demographic.country_data.b1+demographic.country_data.b2) | number : '1.2-2' }}</td>
+	          </tr>
+	          <tr>
+	              <td>{{demographic.labels.b2}}</td>
+	              <td>{{demographic.data.b2}}</td>
+	              <td>{{ demographic.data.b2*100/(demographic.data.b1+demographic.data.b2) | number : '1.2-2' }}</td>
+	              <td>{{demographic.comparison_data.b2}}</td>
+	              <td>{{ demographic.comparison_data.b2*100/(demographic.comparison_data.b1+demographic.comparison_data.b2) | number : '1.2-2' }}</td>
+	              <td>{{demographic.country_data.b2}}</td>
+	              <td>{{ demographic.country_data.b2*100/(demographic.country_data.b1+demographic.country_data.b2) | number : '1.2-2' }}</td>
+	          </tr>
+	          <tr>
+	            <td>Total:</td>
+	            <td>{{demographic.data.b1+demographic.data.b2}}</td>
+	            <td></td>
+	            <td>{{demographic.comparison_data.b1+demographic.comparison_data.b2}}</td>
+	            <td></td>
+	            <td>{{demographic.country_data.b1+demographic.country_data.b2}}</td>
+	            <td></td>
+	          </tr>
+	      </tbody>
+	  </table> -->
+	    <!-- <table *ngFor="let demographic of demographics" class="highlight responsive-table">
 	      <thead>
 	        <tr>
 	            <th data-field="Title">{{demographic.title}}</th>
@@ -47,11 +158,9 @@
 	            <td></td>
 	          </tr>
 	      </tbody>
-	    </table>
-	</div>
-  <div class="card-action">
-    <a *ngIf="!loading" (click)="downloadCsv();" materialize="tooltip" class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Download CSV" class="waves-effect btn grey lighten-4"><i class="material-icons">file_download</i></a>
-  </div>
+	    </table> -->
+
+
   <!-- <csv-export></csv-export> -->
 	                  
 

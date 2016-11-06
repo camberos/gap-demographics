@@ -26,6 +26,8 @@ export class AppData implements OnInit {
       	demographics => { 
       		this.demographics = demographics;
       		this.loading = false;
+           console.log(this.demographics);
+          
       	}
     );
 
@@ -35,17 +37,19 @@ export class AppData implements OnInit {
      var csvData = this.convertToCSV(this.demographics);
     var blob = new Blob([csvData], { type: 'text/csv' });
     var url= window.URL.createObjectURL(blob);
-    window.open(url);
+    //window.open(url);
   }
   // convert Json to CSV data in Angular2
   convertToCSV(objArray: any) {
             var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
             var str = '';
             var row = "";
- 
+           // console.log(array);
+
             for (var index in objArray[0]) {
                 //Now convert each value to string and comma-separated
                 row += index + ',';
+                // console.log(row);
             }
             row = row.slice(0, -1);
             //append Label row with line break

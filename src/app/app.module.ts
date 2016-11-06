@@ -17,7 +17,6 @@ import { MaterializeDirective } from "angular2-materialize";
 import { AppComponent } from './app.component';
 import { AppReportDetails } from './app.report-details';
 import { AppLocationSnapshot } from './app.location-snapshot';
-import { AppPeople } from './app.people';
 import { AppChartPopulation } from "./app.chart-population";
 import { AppChartMedianAge } from "./app.chart-median-age";
 
@@ -87,7 +86,6 @@ export function initLocalization(localizationConfig: LocalizationConfig): Functi
     AppComponent,
     AppReportDetails,
     AppLocationSnapshot,
-    AppPeople,
     AppChartPopulation,
     AppChartMedianAge,
     AppData,

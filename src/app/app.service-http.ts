@@ -19,7 +19,7 @@ export class DemographicsService {
   getDemographics(): Promise<Demographics[]> {
     return this.http.get(this.demographicsUrl)
                .toPromise()
-               .then(response => response.json().data as Demographics[])
+               .then(response => response.json() as Demographics[])
                .catch(this.handleError);
   }
 
