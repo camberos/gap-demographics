@@ -5,6 +5,7 @@ export class Demographics {
   lng: string;
   radius: number;
   tstamp: string;
+  classification_groups: any;
   data: any;
 }
    

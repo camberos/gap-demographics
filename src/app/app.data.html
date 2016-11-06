@@ -1,3 +1,6 @@
+  
+  <div class="card-content">
+    <span class="card-title">{{ 'POPULATION' | translate:lang }}</span> 
 	  <span *ngIf="loading">
 	  	<div class="page-loader-container">
 	    	<div class="dizzy-gillespie"></div>
@@ -45,6 +48,12 @@
 	          </tr>
 	      </tbody>
 	    </table>
+	</div>
+  <div class="card-action">
+    <a *ngIf="!loading" (click)="download();" materialize="tooltip" class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Download CSV" class="waves-effect btn grey lighten-4"><i class="material-icons">file_download</i></a>
+  </div>
+  <!-- <csv-export></csv-export> -->
+	                  
 
 
 
